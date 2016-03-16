@@ -1,0 +1,105 @@
+﻿@model TriggerWars_SignUp.Models.SignUp
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriggerWars</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <div class="banner" style="min-height:300px;">
+        <div class="container text-center">
+            <h1>TriggerWars</h1>
+            <p class="lead">
+                The new social gaming event organisation platform!
+                <br />
+                Want to hear more? Good. TriggerWars will provide a platform for gamers to reach out and find other gamers to play with.
+            </p>
+            @using (Html.BeginForm())
+            {
+                <div class="input-group sign-up">
+                    @Html.TextBoxFor(x => x.Email, new { @placeholder = "Email address", @class = "form-control", @required = "true" })
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-send" aria-hidden="true" style="padding-right:5px;"></span> Notify me
+                        </button>
+                    </span>
+                </div>
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            }
+        </div>
+    </div>
+
+        @* Platform Section *@
+    <section class="section-blue">
+        <div class="container">
+            <div class="row">
+                <h1><span class="heading-underline-white">Any</span> Platform</h1>
+                <div class="col-md-8">
+                    <p>
+                        You can pick any major platform as your gaming environment to play the game you want to play!
+                        <br />
+                        <b>Platform Icons Here</b>
+                    </p>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
+
+    @* Time Section *@
+    <section>
+        <div class="container">
+            <h1><span class="heading-underline">Any</span> Time</h1>
+            <p>You pick the time and date you want to play and let others join in with you!</p>
+        </div>
+    </section>
+
+    @* Any How Section *@
+    <section class="section-orange">
+        <div class="container">
+            <h1><span class="heading-underline-white">Any</span> How</h1>
+            <p>
+                You tailor everything. You pick the type of session you want to play, the number of players you need and you can even control the ranking of the players that can join in with you.
+                No more time wasters here!
+            </p>
+        </div>            
+    </section>
+
+    @* Profile *@
+    <section class="row">
+        <div class="container">
+            <h1><span class="heading-underline">Not</span> Just Anyone</h1>
+            <p>
+                Build your ranking with the kudos rating system. Everything you do will contribute to your ranking allowing you to build your score to be the best.
+                Your Kudos score will represent your dedication to gaming, allow others to see just how dedicated you are. Your global ranking will rate just how awesome you are.
+            </p>
+            <p>Earn badges and awards for competing in certain events and completing spcific milestones.</p>
+        </div>            
+    </section>
+
+    @* Interested *@
+    <section class="row">
+        <div class="container">
+            <h1><span class="heading-underline">Int</span>erested?</h1>
+            <p>
+                TriggerWars is currently in development and will be due for release in the summer. Want to join the beta registration program?
+                You will be among the first users to access and use all of the systems new features.
+            </p>
+            <p>Using your email you will be notified to join the beta program once the system is ready. By doing so you will be enetered in to the beta competion, where you could<b> win 1 years premium access!</b></p>
+        </div>            
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
+
+
+
+
+

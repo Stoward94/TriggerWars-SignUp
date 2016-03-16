@@ -1,0 +1,87 @@
+﻿body {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 23px;
+    font-weight: 400;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.3em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+    h1:first-letter {
+        font-size: 1.5em;
+    }
+
+h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 14px;
+}
+
+blockquote {
+    font-size: 17px;
+}
+
+pre {
+    font-size: 11px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+section {
+    text-align: center;
+    padding: 70px 0;
+}
+
+.section-blue {
+    background: #234ffe;
+    color: #FFF;
+}
+
+.section-orange {
+    background: #ff6a00;
+    color: #FFF;
+}
+
+hr {
+    width: 75%;
+    border: none;
+    height: 1px;
+    background-color: #f1f1f1;
+}
+
+.sign-up {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.lead {
+    font-size: 16px;
+    color: gray;
+}
+
+.container {
+    max-width: 500px !important;
+}
+
+.heading-underline{
+    border-bottom: 3px solid;
+}
+
+.heading-underline-white{
+    border-bottom: 3px solid white;
+}
