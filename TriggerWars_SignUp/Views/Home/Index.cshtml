@@ -1,21 +1,31 @@
 ﻿@model TriggerWars_SignUp.Models.SignUp
 
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TriggerWars</title>
+    <meta property="og:image" content="http://www.signup.triggerwars.com/Media/Icon.png"/>
+    <meta name="description" content="Register for the TriggerWars beta program and be the first to access the brand new social gaming platform"/>
+    <meta name="keywords" content="TriggerWars, gaming, gaming sessions, boosting, clan battle, achievement hunting, trophies"/>
+    <title>TriggerWars - Beta</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="icon" href="~/favicon.ico" />
 </head>
 
 <body>
-    <div class="banner" style="min-height:300px;">
-        <div class="container text-center">
-            <h1>TriggerWars</h1>
-            <p class="lead">
-                The new social gaming event organisation platform!
+    <div class="banner" style="min-height: 370px;">
+        @if (TempData.ContainsKey("Success"))
+        {
+            <div class="alert alert-success" style="max-width: 600px; margin: 0 auto" role="alert"><i class="fa fa-check"></i> @TempData["Success"]</div>
+        }
+        <div class="container text-center" style="position: relative">
+            <img src="~/Media/Logo.svg" class="img-responsive" alt="Logo" width="500" height="125" style="margin: 20px auto;" />
+            <img src="~/Media/register-img.png" class="hidden-xs" style="position: absolute; top: 210px; left: -10px;" />
+            <p class="lead" style="max-width: 400px; margin: 0 auto 20px">
+                The new social gaming organisation platform!
                 <br />
                 Want to hear more? Good. TriggerWars will provide a platform for gamers to reach out and find other gamers to play with.
             </p>
@@ -25,79 +35,122 @@
                     @Html.TextBoxFor(x => x.Email, new { @placeholder = "Email address", @class = "form-control", @required = "true" })
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-send" aria-hidden="true" style="padding-right:5px;"></span> Notify me
+                            <span class="glyphicon glyphicon-send" aria-hidden="true" style="padding-right: 5px;"></span> Notify me
                         </button>
                     </span>
                 </div>
                 @Html.ValidationSummary(false, "", new { @class = "text-danger" })
             }
+            <p class="lead" style="padding: 20px 0;">
+                Register your interest in the TriggerWars beta program
+            </p>
+
         </div>
     </div>
 
-        @* Platform Section *@
+    @* Platform Section *@
     <section class="section-blue">
         <div class="container">
             <div class="row">
-                <h1><span class="heading-underline-white">Any</span> Platform</h1>
-                <div class="col-md-8">
+                <h1><i class="fa fa-gamepad"></i> <span class="heading-underline-white">Any</span> Platform</h1>
+                <div class="col-md-12" style="padding-bottom: 20px;">
                     <p>
-                        You can pick any major platform as your gaming environment to play the game you want to play!
+                        You can arrange to play on any major platform you can think of. TriggerWars allows you to tailor everything you need in order to find the gamers you want.
                         <br />
-                        <b>Platform Icons Here</b>
                     </p>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-xs-2 visible-xs"></div>
+                <div class="col-xs-4 col-sm-2 col-sm-offset-1">
+                    <img src="~/Media/Windows.png" class="platform-icon img-responsive" alt="Windows" width="100" height="100" title="Windows PC" />
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <img src="~/Media/Xbox.png" class="platform-icon img-responsive" alt="Xbox" width="100" height="100" title="Xbox" />
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <img src="~/Media/PlayStation.png" class="platform-icon img-responsive" alt="PlayStation" width="100" height="100" title="PlayStation" />
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <img src="~/Media/Apple.png" class="platform-icon img-responsive" alt="Apple" width="100" height="100" title="Apple" />
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <img src="~/Media/Android.png" class="platform-icon img-responsive" alt="Android" width="100" height="100" title="Android" />
+                </div>
             </div>
+        </div>
+    </section>
+
+    @* Game *@
+    <section class="section-gray">
+        <div class="container">
+            <h1><i class="fa fa-list-ul"></i> <span class="heading-underline">Any</span> Game</h1>
+            <p>Powered by IGDB.com TriggerWars has access to over 17,000 video games, so every game you can think of will be available for you to create a gaming session for.</p>
         </div>
     </section>
 
     @* Time Section *@
     <section>
         <div class="container">
-            <h1><span class="heading-underline">Any</span> Time</h1>
-            <p>You pick the time and date you want to play and let others join in with you!</p>
+            <h1><i class="fa fa-calendar"></i> <span class="heading-underline">Any</span> Time</h1>
+            <p>Schedule your gaming session for any day you want, and let others around the world join and play with you regardless of their location.</p>
+            <img src="~/Media/date-screenshot.png" class="platform-icon img-responsive" alt="Android" />
         </div>
     </section>
 
     @* Any How Section *@
     <section class="section-orange">
         <div class="container">
-            <h1><span class="heading-underline-white">Any</span> How</h1>
+            <h1>
+                <i class="fa fa-cube"></i> <span class="heading-underline-white">Any</span> How
+            </h1>
             <p>
-                You tailor everything. You pick the type of session you want to play, the number of players you need and you can even control the ranking of the players that can join in with you.
+                Customise everything! You pick the type of session you want to play, the number of players you need and you can even control the ranking of the players that can join in with you.
                 No more time wasters here!
             </p>
-        </div>            
+        </div>
+        <div style="max-width: 900px; margin: 40px auto 0;">
+            <img src="~/Media/type-screenshot.png" class="img-responsive" alt="Session Types" style="border: 4px dashed white" />
+        </div>
+
     </section>
 
     @* Profile *@
-    <section class="row">
+    <section>
         <div class="container">
-            <h1><span class="heading-underline">Not</span> Just Anyone</h1>
+            <div class="row">
+                <h1>
+                    <i class="fa fa-trophy" style="color: #eeb41e;"></i> <span class="heading-underline">Not</span> Just Anyone
+                </h1>
+            </div>
             <p>
                 Build your ranking with the kudos rating system. Everything you do will contribute to your ranking allowing you to build your score to be the best.
                 Your Kudos score will represent your dedication to gaming, allow others to see just how dedicated you are. Your global ranking will rate just how awesome you are.
             </p>
             <p>Earn badges and awards for competing in certain events and completing spcific milestones.</p>
-        </div>            
+        </div>
     </section>
 
     @* Interested *@
-    <section class="row">
+    <section class="section-red">
         <div class="container">
             <h1><span class="heading-underline">Int</span>erested?</h1>
             <p>
-                TriggerWars is currently in development and will be due for release in the summer. Want to join the beta registration program?
-                You will be among the first users to access and use all of the systems new features.
+                <b style="font-size: 20px;">Want to join the beta registration program?</b> TriggerWars is currently in development and will be due for release in the summer.
+                You will be among the first users to access this brand new system.
             </p>
             <p>Using your email you will be notified to join the beta program once the system is ready. By doing so you will be enetered in to the beta competion, where you could<b> win 1 years premium access!</b></p>
-        </div>            
+        </div>
     </section>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
+
+
+
+
+
+
 
 
 

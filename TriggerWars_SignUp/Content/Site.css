@@ -12,6 +12,7 @@ h1 {
     font-size: 2.3em;
     font-weight: 500;
     text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
     h1:first-letter {
@@ -24,7 +25,7 @@ h3 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 blockquote {
@@ -33,6 +34,12 @@ blockquote {
 
 pre {
     font-size: 11px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -57,6 +64,15 @@ section {
     color: #FFF;
 }
 
+.section-red {
+    background: #ff2424;
+    color: #FFF;
+}
+
+.section-gray {
+    background: #f8f8f8;
+}
+
 hr {
     width: 75%;
     border: none;
@@ -75,7 +91,7 @@ hr {
 }
 
 .container {
-    max-width: 500px !important;
+    max-width: 600px !important;
 }
 
 .heading-underline{
@@ -85,3 +101,16 @@ hr {
 .heading-underline-white{
     border-bottom: 3px solid white;
 }
+
+.platform-icon {
+    margin-top: 20px;
+}
+
+.fa-gamepad {
+    transform: rotate(-45deg);
+}
+
+ .fa-calendar {
+     margin-right: 5px;
+    transform: rotate(-30deg);
+ }

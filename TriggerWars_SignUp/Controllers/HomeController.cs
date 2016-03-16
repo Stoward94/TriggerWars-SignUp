@@ -51,6 +51,11 @@ namespace TriggerWars_SignUp.Controllers
             db.SignUps.Add(signUp);
             db.SaveChanges();
 
+            model.Email = "";
+
+            TempData["Success"] = "Thanks for registering your interest in the TriggerWars beta program! " +
+                "\nConnect with the TriggerWars Facebook and Twitter accounts to see further development and beta news.";
+
             return View();                        
         }
 
